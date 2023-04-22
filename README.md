@@ -2,7 +2,7 @@
 ZeroTrois engine is the suite of https://github.com/Tnkln99/Engine_03.
 All the applications that I developped with my engine "ZeroTrois". Graphics part of the engine uses Vulkan Api, it has prewritten rendering systems that waits the application to add entities to render. All the apps that is written uses ECS that I implemented in the engine. 
 
-## First applicaiton: Boid Simulation
+## 1) Boid Simulation
 
 Boids follow tree basic rules: cohesion, separation, alignment and one aditionnal one leadership.
 
