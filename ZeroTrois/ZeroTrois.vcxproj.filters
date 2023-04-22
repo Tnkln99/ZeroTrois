@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="scr\components\Camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\core\ComponentArray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\core\Componentmanager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\core\Config.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\core\Coordinator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\core\EntityManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\core\System.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\core\SystemManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\Engine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\graphics\Buffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\components\Light.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\components\Model.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\graphics\Descriptors.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\graphics\FrameInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\graphics\GraphicsEngine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\graphics\Device.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\graphics\Model.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\graphics\Pipeline.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\graphics\Renderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\graphics\SwapChain.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\systems\CameraControllerSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\systems\ModelRendererSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\systems\PointLightRenderSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\utilities\Input.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\utilities\Timer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\utilities\Utils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\graphics\Window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\components\Transform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="scr\Engine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="scr\graphics\Buffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="scr\graphics\Descriptors.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="scr\graphics\GraphicsEngine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="scr\graphics\Device.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="scr\graphics\Model.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="scr\graphics\Pipeline.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="scr\graphics\Renderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="scr\graphics\SwapChain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="scr\graphics\Window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="scr\systems\CameraControllerSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="scr\systems\ModelRendererSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="scr\systems\PointLightRenderSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shaders\default.frag" />
+    <None Include="shaders\default.frag.spv" />
+    <None Include="shaders\default.vert" />
+    <None Include="shaders\default.vert.spv" />
+    <None Include="shaders\compileShaders.bat">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="shaders\pointLight.frag" />
+    <None Include="shaders\pointLight.vert" />
+  </ItemGroup>
+</Project>
