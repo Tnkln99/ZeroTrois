@@ -95,9 +95,9 @@ namespace zt::component
 
         [[nodiscard]] glm::vec3 getForwardVector() const
         {
-            glm::quat rotation = glm::quat_cast(glm::mat3_cast(rotation));
-            const glm::vec3 forward = glm::rotate(rotation, glm::vec3(0.f, 0.f, -1.f));
-            return glm::normalize(forward * scale);
+            glm::quat rotation = quat_cast(glm::mat3_cast(rotation));
+            const glm::vec3 forward = rotate(rotation, glm::vec3(0.f, 0.f, -1.f));
+            return normalize(forward * scale);
         }
     };
 }

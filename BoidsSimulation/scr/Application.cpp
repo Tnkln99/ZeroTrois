@@ -42,9 +42,9 @@ int main() {
     }
     boidManagerSystem->init();
 
-    std::vector<zt::core::Entity> boids( 100 );
+    std::vector<zt::core::Entity> boids( 50 );
     std::default_random_engine generator;
-    std::uniform_real_distribution randPosition(-3.0f, 3.0f);
+    std::uniform_real_distribution randPosition(-1.0f, 1.0f);
     std::uniform_real_distribution randRotation(0.0f, 3.0f);
     std::shared_ptr model = engine.graphicEngine.loadModel("models/capsule.obj");
     for (auto& entity : boids)
@@ -56,7 +56,8 @@ int main() {
             zt::component::Transform{
                 {randPosition(generator), randPosition(generator), randPosition(generator)},
                 { 0.07f, 0.07f, 0.07f },
-                {randRotation(generator), randRotation(generator), randRotation(generator)}
+                //{randRotation(generator), randRotation(generator), randRotation(generator)}
+                {1.0f, 1.0f, 1.0f}
             });
 
         coordinator.addComponent(entity,
@@ -103,7 +104,7 @@ int main() {
             float dt = zt::utilities::Timer::getDeltaTime();
             engine.update(coordinator);
             cameraControllerSystem->update(coordinator, engine.graphicEngine.getAspectRatio(), dt);
-            boidManagerSystem->update(coordinator, dt );
+            boidManagerSystem->update(coordinator, dt);
         }
         engine.terminate();
     }

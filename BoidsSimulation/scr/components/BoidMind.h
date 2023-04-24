@@ -12,9 +12,9 @@ struct BoidMind
 	glm::vec3 alignment{ 1.0f };
 
 	float speed = 10.0f;
-	float turnSpeed = 20.0f;
-	float detectionRad = 1.5f;
-	float avoidRad = 1.0f;
+	float turnSpeed = 200.0f;
+	float detectionRad = 2.5f;
+	float avoidRad = 2.0f;
 };
 
 

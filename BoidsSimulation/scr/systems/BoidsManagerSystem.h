@@ -13,6 +13,5 @@ public:
 	void update(zt::core::Coordinator& coordinator, float dt);
 private:
 	bool isPositionOutsideCube(glm::vec3 position, glm::vec3 cubeMin, glm::vec3 cubeMax);
-
 };
 

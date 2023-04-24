@@ -1,11 +1,14 @@
 #include "BoidsManagerSystem.h"
 #include "components/Transform.h"
 #include "../components/BoidMind.h"
+#include "utilities/Timer.h"
 #include <math.h>
+#include <random>
 
 
 void BoidsManagerSystem::init()
 {
+	srand(time(0)); // seed the random number generator with current time
 }
 
 void BoidsManagerSystem::update(zt::core::Coordinator& coordinator, float dt)
@@ -17,7 +20,9 @@ void BoidsManagerSystem::update(zt::core::Coordinator& coordinator, float dt)
 	{
  		auto& transform1 = coordinator.getComponent<zt::component::Transform>(boid1);
 		const auto& boidMind = coordinator.getComponent<BoidMind>(boid1);
-        constexpr float worldSize = 3.0f;
+
+        constexpr float worldSize = 5.0f;
+
 		if (transform1.translation.x < -worldSize) 
 		{
 			transform1.translation.x = worldSize;
@@ -50,6 +55,7 @@ void BoidsManagerSystem::update(zt::core::Coordinator& coordinator, float dt)
 		glm::vec3 cohesion{ 0.0f };
 		glm::vec3 separation{ 0.0f };
 		glm::vec3 alignment{ 0.0f };
+		glm::vec3 leader{ 0 };
 
 		std::uint32_t leaderBoid = *entities.begin();
 		auto leaderAngle = 180.0f;
@@ -85,27 +91,54 @@ void BoidsManagerSystem::update(zt::core::Coordinator& coordinator, float dt)
 		if (separationCount > 0)
 		{
 			separation /= separationCount;
+			separation = -separation;
+			if(separation != glm::vec3{0})
+			{
+				separation = normalize(separation);
+			}
 		}
 		if (neighborCount > 0)
 		{
 			alignment /= neighborCount;
+			
 			cohesion /= neighborCount;
+			cohesion -= transform1.translation;
+
+			if(cohesion!=glm::vec3{0})
+			{
+				cohesion = normalize(cohesion);
+			}
+			if (alignment != glm::vec3{ 0 })
+			{
+				alignment = normalize(cohesion);
+			}
 		}
+
 		if (leaderBoid != 0)
 		{
 			auto leaderTransform = coordinator.getComponent<zt::component::Transform>(leaderBoid);
-			glm::vec3 leaderPos = leaderTransform.translation - transform1.translation;
-			steering += leaderPos * 0.5f;
+			leader = leaderTransform.translation - transform1.translation;
+			leader = normalize(leader);
 		}
 
-		cohesion -= transform1.translation;
-		separation = -separation;
+		// avoidance for cube boundaries
+		// float avoidDistance = 1.0f;
+        // auto avoid = glm::vec3 {0};
+		// if (std::abs(transform1.translation.x - (-worldSize)) < avoidDistance) { avoid.x = 1.0f; }
+		// else if (std::abs(transform1.translation.x - (worldSize)) < avoidDistance) { avoid.x = -1.0f; }
+		// 
+		// if (std::abs(transform1.translation.y - (-worldSize)) < avoidDistance) { avoid.y = 1.0f; }
+		// else if (std::abs(transform1.translation.y - (worldSize)) < avoidDistance) { avoid.y = -1.0f; }
+		// 
+		// if (std::abs(transform1.translation.z - (-worldSize)) < avoidDistance) { avoid.z = 1.0f; }
+		// else if (std::abs(transform1.translation.z - (worldSize)) < avoidDistance) { avoid.z = -1.0f; }
 
-		steering += cohesion * 0.6f + separation * 0.7f + alignment * 0.16f;// +obstacle;
-
-		steering = -transform1.translation;
-
+		steering += cohesion * 0.6f + separation * 0.7f + alignment * 0.36f + leader * 0.5f;
 		
+
+		glm::vec3 centerOfInterest = normalize(glm::vec3{ 0 } - transform1.translation);
+		steering += centerOfInterest;
+
 
  		if(steering!= glm::vec3(0))
 		{
