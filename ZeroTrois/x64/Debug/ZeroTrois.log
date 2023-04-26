@@ -1,6 +1,2 @@
-﻿  GraphicsEngine.cpp
-  CameraControllerSystem.cpp
-  ModelRendererSystem.cpp
-  PointLightRenderSystem.cpp
-  Generating Code...
+﻿  SwapChain.cpp
   ZeroTrois.vcxproj -> C:\Users\tanku\Documents\Projects\ZeroTrois\x64\Debug\ZeroTrois.lib

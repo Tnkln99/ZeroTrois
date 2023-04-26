@@ -12,6 +12,7 @@ layout(set = 0, binding = 0) uniform GlobalUbo{
 	vec4 lightColor;
 } ubo;
 
+
 layout(push_constant) uniform Push{
 	mat4 modelMatrix; // projection * view * transform
 	mat4 normalMatrix;

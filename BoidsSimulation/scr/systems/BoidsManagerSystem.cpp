@@ -136,8 +136,8 @@ void BoidsManagerSystem::update(zt::core::Coordinator& coordinator, float dt)
 		steering += cohesion * 0.6f + separation * 0.7f + alignment * 0.36f + leader * 0.5f;
 		
 
-		glm::vec3 centerOfInterest = normalize(glm::vec3{ 0 } - transform1.translation);
-		steering += centerOfInterest;
+		//glm::vec3 centerOfInterest = normalize(glm::vec3{ 0 } - transform1.translation);
+		//steering += centerOfInterest;
 
 
  		if(steering!= glm::vec3(0))
